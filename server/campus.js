@@ -4,7 +4,11 @@ const Campus = require('../db/models/campus')
 // Campus part to refactor out
 
 router.get('/:campusId', (req, res, next) => {
-  Student.findAll({
+  // Campus.findById(req.params.campusId)
+  //   .then(campus => res.json(data))
+
+  // maybe make student find all a campus method to make more than one query?
+      Student.findAll({
       where: {
         CampusId: req.params.campusId
       }
@@ -38,7 +42,7 @@ router.put('/:campusId', (req, res, next) => {
 router.delete('/:campusId', (req, res, next) => {
   Campus.findById(req.params.campusId)
     .then(campus => campus.destroy()
-      .then(()=> res.sendStatus(204))
+      .then(() => res.sendStatus(204))
     )
 });
 
