@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import AllCampuses from './AllCampuses'
+import { Route, Switch, Redirect } from 'react-router-dom';
+import NavBar from './NavBar';
 
 export default class Root extends Component {
-  constructor(){
-    super();
-    this.state = {
-      campuses: []
-    }
-  }
+
   render(){
     return(
-      <Router>
-        <Routes path="/home" component={AllCampuses} />
-      </Router>
+      <div>
+        <NavBar />
+      </div>
     )
   }
 }
