@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const Student = require('../db/models/student')
 
-// Student Routes to refactor out
 router.get('/:studentId', (req, res, next) => {
   Student.findById(req.params.studentId)
     .then(student => res.json(student));
