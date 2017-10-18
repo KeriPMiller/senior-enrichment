@@ -1,14 +1,10 @@
-import React from 'react'
+import React,{ Component } from 'react'
 
-export default function Campus (props){
-  const campus = props.campus;
+export default class Campus extends Component {
 
-  return(
-    <li>
-      <div>
-        <h4>{campus.name}</h4>
-        {campus.image}
-      </div>
-    </li>
-  )
+  render() {
+    return(
+      <h1>Campuses</h1>
+    )
+  }
 }

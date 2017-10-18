@@ -19,7 +19,7 @@ export function getCampuses (campuses) {
 // THUNK CREATORS
 
 export function fetchCampuses(dispatch){
-  return axios.get('/api/campus/campuses', campus)
+  return axios.get('/api/campus/campuses')
     .then(res => res.data)
     .then(campuses => {
       const action = getCampuses(campuses)
