@@ -1,6 +1,6 @@
-import React from 'react';
-import { withRouter, NavBar } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from 'react'
+import { withRouter, NavBar } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 function StudentList (props) {
   return(
@@ -12,16 +12,16 @@ function StudentList (props) {
               <li key={student.id}>
                 <span>{student.name}</span>
               </li>
-            );
+            )
           })
         }
       </ul>
     </div>
-  );
+  )
 }
 
 const mapStateToProps = state => {
-  return {students: state.students};
-};
+  return {students: state.students}
+}
 
-export default withRouter(connect(mapStateToProps)(StudentList));
+export default withRouter(connect(mapStateToProps)(StudentList))

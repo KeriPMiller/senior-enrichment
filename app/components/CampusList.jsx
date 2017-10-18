@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, NavBar } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Campus from './Campus'
 
 function CampusList (props) {
   return(

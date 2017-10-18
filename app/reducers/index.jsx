@@ -17,3 +17,7 @@ const rootReducer = combineReducers({
 // };
 
 export default rootReducer
+
+// export action creators
+export * from './campuses'
+export * from './students'

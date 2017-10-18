@@ -1,12 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
 
 function NavBar (props) {
-  const { currentCampus } = props;
+  const { currentCampus } = props
 
   return (
-    <nav>
-      <h3> Interplanetary Campus {currentCampus}</h3>
+    <nav className="nav" style={{backgroundColor: 'black', color: 'white', padding: '30px'}}>
+      <h3> Margaret Hamilton Interplanetary Academy of JavaScript</h3>
+      <div style={{padding: '30px'}}>
+        <button> Home </button>
+        <button> Students </button>
+      </div>
     </nav>
   )
 }
@@ -14,7 +18,7 @@ function NavBar (props) {
 const mapStateToProps = function( state ) {
   return {
     currentCampus: state.currentCampus
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps)(NavBar)

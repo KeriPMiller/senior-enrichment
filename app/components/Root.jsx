@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import NavBar from './NavBar'
 import CampusList from './CampusList'
-import StudentList from './StudentList'
+
 
 export default class Root extends Component {
+  // componentDidMount(){
+  //   const campusThunk = fetchCampuses()
+  //   store.dispatch(campusThunk)
+  // }
 
   render(){
     return(
       <div>
         <NavBar />
-        <Switch>
-          <Route path="/campuses" components={CampusList} />
-        </Switch>
+        <main>
+          <Router>
+            <Switch>
+              <Route path="/home" component={CampusList} />
+            </Switch>
+          </Router>
+        </main>
       </div>
     )
   }
