@@ -3,10 +3,10 @@ import axios from 'axios'
 // ACTION TYPES
 
 const GET_CAMPUSES = 'GET_CAMPUSES'
-const CREATE_CAMPUS = 'CREATE_CAMPUS'
-const UPDATE_CAMPUS = 'UPDATE_CAMPUS'
-const SELECT_CAMPUS = 'SELECT_CAMPUS'
-const DESTROY_CAMPUS = 'DESTROY_CAMPUS'
+// const CREATE_CAMPUS = 'CREATE_CAMPUS'
+// const UPDATE_CAMPUS = 'UPDATE_CAMPUS'
+// const SELECT_CAMPUS = 'SELECT_CAMPUS'
+// const DESTROY_CAMPUS = 'DESTROY_CAMPUS'
 
 // ACTION CREATORS
 
@@ -15,11 +15,11 @@ const getCampuses = (campuses) => {
   return action
 }
 
-export const createCampus = (campus) => {
-  const action = { type: CREATE_CAMPUS, campus }
-  return action
-}
-
+// export const createCampus = (campus) => {
+//   const action = { type: CREATE_CAMPUS, campus }
+//   return action
+// }
+//
 // const updateCampus = (campus) => {
 //   const action = { type: UPDATE_CAMPUS, campus }
 //   return action
@@ -43,8 +43,8 @@ export default function reducer ( campuses = [], action) {
     case GET_CAMPUSES:
       return action.campuses
 
-    case CREATE_CAMPUS:
-      return [action.campus, ...campuses]
+    // case CREATE_CAMPUS:
+    //   return [action.campus, ...campuses]
 
     // case UPDATE_CAMPUS:
     // return state.map(campus => (

@@ -1,4 +1,5 @@
 import React,{ Component } from 'react'
+import { fetchCampuses } from '../../reducers/campuses'
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -7,11 +8,15 @@ class CampusList extends Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.getAllCampuses();
+  }
+
   render() {
     return (
       <div className="container">
         <div className="campus-list">
-        {campuses.map(campus => (
+        {this.props.campuses.map(campus => (
           <div key={campus.id}>
             <NavLink to={`/campus/${campus.id}`} className="campus">
               <img src={campus.image} />
@@ -29,6 +34,13 @@ class CampusList extends Component {
   }
 }
 
-const mapToProps = () => ({campuses}) => ({campuses})
+const mapStateToProps = () => ({campuses}) => ({campuses})
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getAllCampuses: () => {
+      dispatch(fetchCampuses())
+    }
+  }
+}
 
-export default connect(mapToProps)(CampusList)
+export default connect(mapStateToProps, mapDispatchToProps)(CampusList)
