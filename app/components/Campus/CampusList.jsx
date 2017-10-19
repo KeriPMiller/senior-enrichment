@@ -4,9 +4,6 @@ import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class CampusList extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentDidMount() {
     this.props.getAllCampuses();

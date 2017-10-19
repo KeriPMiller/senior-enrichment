@@ -14,7 +14,6 @@ const getCampuses = (campuses) => {
   const action = { type: GET_CAMPUSES, campuses }
   return action
 }
-
 // export const createCampus = (campus) => {
 //   const action = { type: CREATE_CAMPUS, campus }
 //   return action
