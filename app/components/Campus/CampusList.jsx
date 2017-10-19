@@ -1,24 +1,34 @@
 import React,{ Component } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class CampusList extends Component {
   constructor(props) {
     super(props)
-      this.state = store.getState();
   }
-  
 
   render() {
     return (
       <div className="container">
         <div className="campus-list">
-        {
-          this.props.campuses
-            .map(campus => <li key={campus.id}>{campus.name}</li>)
-        }
+        {campuses.map(campus => (
+          <div key={campus.id}>
+            <NavLink to={`/campus/${campus.id}`} className="campus">
+              <img src={campus.image} />
+            </NavLink>
+            <div className="row">
+              <NavLink to={`/campus/${campus.id}`} className="campus">
+                <h2>{campus.name}</h2>
+              </NavLink>
+            </div>
+          </div>
+        ))}
         </div>
       </div>
     );
   }
 }
+
+const mapToProps = () => ({campuses}) => ({campuses})
+
+export default connect(mapToProps)(CampusList)
