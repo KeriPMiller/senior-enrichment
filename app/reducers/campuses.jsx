@@ -20,20 +20,20 @@ export const createCampus = (campus) => {
   return action
 }
 
-const updateCampus = (campus) => {
-  const action = { type: UPDATE_CAMPUS, campus }
-  return action
-}
-
-const selectCampus = (campus) => {
-  const action = { type: SELECT_CAMPUS, campus }
-  return action
-}
-
-const destroyCampus = (campus) => {
-  const action = { type: DESTROY_CAMPUS, campus }
-  return action
-}
+// const updateCampus = (campus) => {
+//   const action = { type: UPDATE_CAMPUS, campus }
+//   return action
+// }
+//
+// const selectCampus = (campus) => {
+//   const action = { type: SELECT_CAMPUS, campus }
+//   return action
+// }
+//
+// const destroyCampus = (campus) => {
+//   const action = { type: DESTROY_CAMPUS, campus }
+//   return action
+// }
 
 // REDUCER
 export default function reducer ( campuses = [], action) {
@@ -51,8 +51,8 @@ export default function reducer ( campuses = [], action) {
     //   action.campus.id === user.id ? action.campus : campus
     // ))
 
-    case SELECT_CAMPUS:
-      return [action.campus, ...state]
+    // case SELECT_CAMPUS:
+    //   return [action.campus, ...state]
 
     // case DESTROY_CAMPUS:
     //   return state.filter(campus => campus.id !== action.id)
