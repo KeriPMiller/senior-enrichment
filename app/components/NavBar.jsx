@@ -1,24 +1,30 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+// import home and students maybe?
 
-function NavBar (props) {
-  const { currentCampus } = props
-
+export default class NavBar extends Component {
+  constructor(props) {
+    super(props)
+    // rendering home and students?
+  }
+  render(){
   return (
-    <nav className="nav" style={{backgroundColor: 'black', color: 'white', padding: '30px'}}>
-      <h3> Margaret Hamilton Interplanetary Academy of JavaScript</h3>
-      <div style={{padding: '30px'}}>
-        <button> Home </button>
-        <button> Students </button>
+    <nav className="navbar navbar-default">
+      <div className="conatiner">
+        <h1>Margaret Hamilton Interplanetary Academy of JavaScript</h1>
+        <div className="navbar-header">
+          <ul>
+            <li><button>Home</button></li>
+            <li><button>Students</button></li>
+          </ul>
+        </div>
       </div>
     </nav>
-  )
+  )}
 }
 
-const mapStateToProps = function( state ) {
-  return {
-    currentCampus: state.currentCampus
-  }
-}
+// conatiner
 
-export default connect(mapStateToProps)(NavBar)
+
+// export default connect(mapStateToProps)(NavBar)

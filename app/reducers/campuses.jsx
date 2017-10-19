@@ -1,44 +1,70 @@
 import axios from 'axios'
 
 // ACTION TYPES
-const GET_CAMPUS = 'GET_CAMPUS'
+
 const GET_CAMPUSES = 'GET_CAMPUSES'
+const CREATE_CAMPUS = 'CREATE_CAMPUS'
+const UPDATE_CAMPUS = 'UPDATE_CAMPUS'
+const SELECT_CAMPUS = 'SELECT_CAMPUS'
+const DESTROY_CAMPUS = 'DESTROY_CAMPUS'
 
 // ACTION CREATORS
-export function getCampus (campus){
-  const action = { type: GET_CAMPUS, campus }
-  return action
-}
 
-export function getCampuses (campuses) {
+const getCampuses = (campuses) => {
   const action = { type: GET_CAMPUSES, campuses }
   return action
 }
 
+export const createCampus = (campus) => {
+  const action = { type: CREATE_CAMPUS, campus }
+  return action
+}
 
-// THUNK CREATORS
+const updateCampus = (campus) => {
+  const action = { type: UPDATE_CAMPUS, campus }
+  return action
+}
 
-export function fetchCampuses(dispatch){
-  return axios.get('/api/campus/campuses')
-    .then(res => res.data)
-    .then(campuses => {
-      const action = getCampuses(campuses)
-      dispatch(action)
-    })
+const selectCampus = (campus) => {
+  const action = { type: SELECT_CAMPUS, campus }
+  return action
+}
+
+const destroyCampus = (campus) => {
+  const action = { type: DESTROY_CAMPUS, campus }
+  return action
 }
 
 // REDUCER
-export default function reducer( state = [], action) {
+export default function reducer ( campuses = [], action) {
 
   switch(action.type){
 
     case GET_CAMPUSES:
       return action.campuses
 
-    case GET_CAMPUS:
-      return [...state, action.campus]
+    case CREATE_CAMPUS:
+      return [action.campus, ...campuses]
+
+    // case UPDATE_CAMPUS:
+    // return state.map(campus => (
+    //   action.campus.id === user.id ? action.campus : campus
+    // ))
+
+    case SELECT_CAMPUS:
+      return [action.campus, ...state]
+
+    // case DESTROY_CAMPUS:
+    //   return state.filter(campus => campus.id !== action.id)
 
     default:
-      return state
+      return campuses
   }
+}
+
+// THUNK CREATORS
+
+export const fetchCampuses = () => dispatch => {
+  axios.get('/api/campus/campuses')
+  .then(res => dispatch(getCampuses(res.data)))
 }

@@ -1,43 +1,39 @@
 import axios from 'axios'
 
 // ACTION TYPES
-const GET_STUDENT = 'GET_STUDENT'
+const SELECT_STUDENT = 'SELECT_STUDENT'
 const GET_STUDENTS = 'GET_STUDENTS'
 
 // ACTION CREATORS
-export function getStudent (student){
+const selectStudent = (student) => {
   const action = { type: getStudent, student }
   return action
 }
 
-export function getStudents (students) {
+const getStudents = (students) => {
   const action = { type: GET_STUDENTS, students }
   return action
 }
 
-// THUNK CREATORS
-
-export function fetchStudents(dispatch){
-  return axios.get('/api/students', student)
-    .then(res => res.data)
-    .then(students => {
-      const action = getStudents(students)
-      dispatch(action)
-    })
-}
-
 // REDUCER
-export default function reducer( state = [], action) {
+export default function reducer( students = [], action) {
 
   switch(action.type){
 
     case GET_STUDENTS:
-      return action.students
+    return action.students
 
-    case GET_STUDENT:
-      return [...state, action.student]
+    case SELECT_STUDENT:
+    return [...students, action.student]
 
     default:
-      return state
+    return students
   }
+}
+
+// THUNK CREATORS
+
+export const fetchStudents = () => dispatch => {
+  axios.get('/api/students')
+    .then(res => dispatch(getStudents(res.data)))
 }
