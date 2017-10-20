@@ -1,20 +1,27 @@
 import React,{ Component } from 'react'
-import { fetchOneCampus } from '../../reducers/campus'
+import { fetchOneCampus, destroyOneCampus } from '../../reducers/campus'
 import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class CampusDetail extends Component {
 
+  constructor(props){
+    super(props)
+  }
+
   componentDidMount() {
     const campusId = this.props.match.params.campusId;
-    console.log(campusId)
     this.props.getCampusDetail(campusId);
   }
 
   render() {
+    const campus = this.props.campus
     return(
       <div className="campus">
-        <h1>{this.props.campus.name}</h1>
+        <h2>{campus.name}</h2>
+        <img src={campus.image}></img>
+        <button>addNewStudent</button>
+        <button>Delete Campus!</button>
       </div>
     )
   }
@@ -31,3 +38,10 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampusDetail)
+
+
+// <ul>
+//   {this.props.campus.Students.map((student) => (
+//     <li>{student.name}</li>
+//   ))}
+// </ul>

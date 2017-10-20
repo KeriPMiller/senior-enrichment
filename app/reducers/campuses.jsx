@@ -66,4 +66,5 @@ export default function reducer ( campuses = [], action) {
 export const fetchCampuses = () => dispatch => {
   axios.get('/api/campus/campuses')
   .then(res => dispatch(getCampuses(res.data)))
+  .catch(err => console.erro(err))
 }

@@ -12,6 +12,7 @@ import CampusDetail from './components/Campus/CampusDetail'
 
 import { fetchStudents } from './reducers/students'
 import StudentList from './components/Student/StudentList'
+import StudentDetail from './components/Student/StudentDetail'
 
   // COMPONENTS
 class Routes extends Component {
@@ -24,6 +25,7 @@ class Routes extends Component {
       <Router history={history}>
         <Root>
           <Switch>
+            <Route path="/students/:studentId" component={StudentDetail} />
             <Route exact path="/students" component={StudentList} />
             <Route path="/campus/:campusId" component={CampusDetail} />
             <Route path="/" component={CampusList} />

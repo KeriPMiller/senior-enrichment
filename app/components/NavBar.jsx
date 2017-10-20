@@ -7,7 +7,6 @@ import history from '../history'
 export default class NavBar extends Component {
   constructor(props) {
     super(props)
-    // rendering home and students?
   }
   render(){
   return (
@@ -16,8 +15,8 @@ export default class NavBar extends Component {
         <h1>Margaret Hamilton Interplanetary Academy of JavaScript</h1>
         <div className="navbar-header">
           <ul>
-            <li><button>Home</button></li>
-            <li><button>Students</button></li>
+            <li><Link to='/'><button className="nav button">Home</button></Link></li>
+            <li><Link to='/students'><button className="nav button">Students</button></Link></li>
           </ul>
         </div>
       </div>
