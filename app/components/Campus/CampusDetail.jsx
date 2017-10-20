@@ -13,11 +13,22 @@ class CampusDetail extends Component {
   render() {
     const campus = this.props.campus
     return(
-      <div className="campus">
-        <h2>{campus.name}</h2>
-        <img src={campus.image}></img>
-        <button>addNewStudent</button>
-        <button>Delete Campus!</button>
+      <div className="single-campus campus">
+        {
+          campus.id && (
+          <div>
+            <h2>{campus.name}</h2>
+            <img src={campus.image}></img>
+            <ul className="students">
+              {campus.Students.map((student) => {
+                <li key={student.id}>{student.name}</li>
+              })}
+            </ul>
+            <button>addNewStudent</button>
+            <button>Delete Campus!</button>
+          </div>
+          )
+        }
       </div>
     )
   }

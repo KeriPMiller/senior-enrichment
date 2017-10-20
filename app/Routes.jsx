@@ -6,13 +6,15 @@ import history from './history';
 import Root from './components/Root'
 
 import { fetchCampuses } from './reducers/campuses'
-import { fetchOneCampus } from './reducers/campus'
+// import { fetchOneCampus } from './reducers/campus'
 import CampusList from './components/Campus/CampusList'
 import CampusDetail from './components/Campus/CampusDetail'
+import AddCampus from './components/Campus/AddCampus'
 
 import { fetchStudents } from './reducers/students'
 import StudentList from './components/Student/StudentList'
 import StudentDetail from './components/Student/StudentDetail'
+import AddStudent from './components/Student/AddStudent'
 
   // COMPONENTS
 class Routes extends Component {
@@ -26,8 +28,10 @@ class Routes extends Component {
         <Root>
           <Switch>
             <Route path="/students/:studentId" component={StudentDetail} />
+            <Route exact path="/student/add"component={AddStudent} />
             <Route exact path="/students" component={StudentList} />
             <Route path="/campus/:campusId" component={CampusDetail} />
+            <Route exact path="/campus/add" component={AddCampus} />
             <Route path="/" component={CampusList} />
         </Switch>
         </Root>

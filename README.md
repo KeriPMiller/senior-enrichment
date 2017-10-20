@@ -1,5 +1,15 @@
 # Senior Enrichment Project
 
+## Things To Add
+---
+- [ ]  style
+- [ ]  students to single campus view -> probably linked to timing and eager loading
+- [ ]  drop down form
+- [ ]  delete buttons
+- [ ] add buttons
+
+
+
 Make a thing!
 
 ## Getting started

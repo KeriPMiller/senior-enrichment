@@ -2,21 +2,20 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
-import {createStudent} from '../../reducers/students'
+import {createCampus} from '../../reducers/campuses'
 
 class AddStudent extends Component{
   constructor(props) {
    super(props)
    this.state = {
      name: '',
-     email: '',
-     campusId: '',
+     image: '',
    }
    this.handleSubmit = this.handleSubmit.bind(this)
  }
 
  componentDidMount() {
-   this.props.addOneNewStudent(/*inputvalue from form */)
+   this.props.addOneNewCampus(/*inputvalue from form */)
  }
 handleChange(event) {
   const name = target.name
@@ -34,26 +33,20 @@ render(){
   return(
     <div>
       <form>
-        <label>Student Name:</label>
+        <label>Campus Name:</label>
         <input
           name='name'
           type='text'
           value={this.state.name}
           onChange={this.handleChange}
           ></input>
-        <label>Student Email:</label>
+        <label>Campus Email:</label>
         <input
-          name='email'
-          type='email'
-          value={this.state.email}
+          name='image'
+          type='text'
+          value={this.state.image}
           onChange={this.handleChange}
           ></input>
-        <label>Campus Id:</label>
-        <select onChange={this.handleChange} name="campusId" value={this.state.campusId} onChange={this.handleChange}>
-            {this.props.campuses.map(campus => (
-              <option key={campus.id} value={campus.id}>{campus.name}</option>
-            ))}
-          </select>
           <input type='submit' value='submit'/>
       </form>
     </div>
@@ -62,11 +55,11 @@ render(){
 
 }
 
-const mapToProps = ({students, campuses}) => ({students, campuses})
+const mapToProps = ({campuses}) => ({campuses})
 const mapToDispatch = (dispatch) => {
   return {
-    addOneNewStudent: (student) => {
-      dispatch(createStudent(student))
+    addOneNewCampus: (campus) => {
+      dispatch(createCampus(campus))
     }
   }
 }
