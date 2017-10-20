@@ -24,7 +24,7 @@ class CampusDetail extends Component {
                 <li key={student.id}>{student.name}</li>
               })}
             </ul>
-            <button>addNewStudent</button>
+            <Link to='/student/add'><button>addNewStudent</button></Link>
             <button>Delete Campus!</button>
           </div>
           )

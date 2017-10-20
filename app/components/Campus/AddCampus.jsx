@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
-import {createCampus} from '../../reducers/campuses'
+// import {createCampus} from '../../reducers/campuses'
 
 class AddStudent extends Component{
   constructor(props) {
@@ -12,6 +12,7 @@ class AddStudent extends Component{
      image: '',
    }
    this.handleSubmit = this.handleSubmit.bind(this)
+   this.handleChange = this.handleChange.bind(this)
  }
 
  componentDidMount() {
@@ -26,7 +27,7 @@ handleChange(event) {
 
 handleSubmit(event){
   event.preventDefault()
-  this.props(addOneNewStudent)
+  this.props(addOneNewCampus)
 }
 
 render(){
@@ -59,7 +60,7 @@ const mapToProps = ({campuses}) => ({campuses})
 const mapToDispatch = (dispatch) => {
   return {
     addOneNewCampus: (campus) => {
-      dispatch(createCampus(campus))
+      // dispatch(createCampus(campus))
     }
   }
 }
