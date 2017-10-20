@@ -11,6 +11,7 @@ class CampusDetail extends Component {
   }
   render() {
     const student = this.props.student
+    const campuses = this.props.campuses
     return(
       <div className="student">
         <h2>{student.name}</h2>
@@ -24,8 +25,8 @@ class CampusDetail extends Component {
   }
 }
 
-const mapStateToProps = () => ({student}) => ({student})
-
+const mapStateToProps = () => ({student, campuses}) => ({student, campuses})
+// trying to import campuses state to access name 
 const mapDispatchToProps = (dispatch) => {
   return {
     getStudentDetail: (student) => {
