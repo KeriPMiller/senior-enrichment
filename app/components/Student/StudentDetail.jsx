@@ -5,10 +5,6 @@ import { connect } from 'react-redux'
 
 class CampusDetail extends Component {
 
-  constructor(props){
-    super(props)
-  }
-
   componentDidMount() {
     const studentId = this.props.match.params.studentId;
     this.props.getStudentDetail(studentId);
