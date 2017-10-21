@@ -13,16 +13,18 @@ class AddStudent extends Component{
      campusId: '',
    }
    this.handleSubmit = this.handleSubmit.bind(this)
+   this.handleChange = this.handleChange.bind(this)
  }
 
  componentDidMount() {
    this.props.addOneNewStudent(/*inputvalue from form */)
  }
 handleChange(event) {
-  const name = target.name
-  const target = event.target
+  // const name = target.name
+  // const target = event.target
 
-  this.setState({[name]: target.value})
+  this.setState({[event.target.name]: event.target.value})
+  console.log(this.state)
 }
 
 handleSubmit(event){
