@@ -49,7 +49,7 @@ export const fetchStudents = () => dispatch => {
 }
 
 export const createStudent = (student) =>  dispatch => {
-  axios.post('/api/students/create')
+  axios.post('/api/students/create', student)
   .then(res => dispatch(addStudent(res.data)))
   .catch(err => console.error(err))
 }

@@ -10,7 +10,7 @@ class AddStudent extends Component{
    this.state = {
      name: '',
      email: '',
-     CampusId: '',
+     CampusId: '1',
    }
    this.handleSubmit = this.handleSubmit.bind(this)
    this.handleChange = this.handleChange.bind(this)
@@ -23,9 +23,6 @@ handleChange(event) {
 
 handleSubmit(event){
   event.preventDefault()
-  const name = this.state.name
-  const email = this.state.email
-  const campusId = this.state.campusId
   this.props.createStudent(this.state)
 }
 
@@ -49,7 +46,6 @@ render(){
           ></input>
         <label>Campus Id:</label>
         <select onChange={this.handleChange} name="campusId" value={this.state.CampusId} onChange={this.handleChange}>
-         <option value="" disabled selected>Select Campus</option>
         {this.props.campuses.map(campus => (
           <option key={campus.id} value={campus.id}>{campus.name}</option>
         ))}
