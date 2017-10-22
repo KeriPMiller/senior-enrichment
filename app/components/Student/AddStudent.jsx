@@ -49,10 +49,11 @@ render(){
           ></input>
         <label>Campus Id:</label>
         <select onChange={this.handleChange} name="campusId" value={this.state.CampusId} onChange={this.handleChange}>
-            {this.props.campuses.map(campus => (
-              <option key={campus.id} value={campus.id}>{campus.name}</option>
-            ))}
-          </select>
+         <option value="" disabled selected>Select Campus</option>
+        {this.props.campuses.map(campus => (
+          <option key={campus.id} value={campus.id}>{campus.name}</option>
+        ))}
+        </select>
           <input type='submit' value='submit'/>
       </form>
     </div>
