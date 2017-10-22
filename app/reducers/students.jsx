@@ -17,7 +17,7 @@ const getStudents = (students) => {
 // }
 //
 const addStudent = student => {
-  const action =  { type: addStudent, student }
+  const action =  { type: ADD_STUDENT, student }
   return action
 }
 
