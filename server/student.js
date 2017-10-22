@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/create', (req, res, next) => {
   data = req.body
-  Student.create({name: data.name, email: data.email, CampusId: data.CampusId}, { fields: ['name', 'email', 'CampusId' ]})
+  Student.create(data)
   .then((student)=> res.sendStatus(200));
 });
 
