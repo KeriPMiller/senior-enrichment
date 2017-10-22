@@ -17,25 +17,26 @@ class AddStudent extends Component{
  }
 
  componentDidMount() {
-   this.props.addOneNewStudent(/*inputvalue from form */)
+   this.props.addOneNewStudent()
  }
 handleChange(event) {
-  // const name = target.name
-  // const target = event.target
-
-  this.setState({[event.target.name]: event.target.value})
   console.log(this.state)
+  this.setState({[event.target.name]: event.target.value})
 }
 
 handleSubmit(event){
   event.preventDefault()
-  this.props(addOneNewStudent)
+  const name = this.state.name
+  const email = this.state.email
+  const campusId = this.state.campusId
+  console.log(name ,email, campusId)
+  this.props.addOneNewStudent({name, email, campusId})
 }
 
 render(){
   return(
     <div>
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>Student Name:</label>
         <input
           name='name'
