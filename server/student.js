@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 router.post('/create', (req, res, next) => {
   data = req.body
   Student.create(data)
-  .then((student)=> res.sendStatus(200));
+  .then((student)=> res.json(student));
 });
 
 router.put('/:studentId', (req, res, next) => {
