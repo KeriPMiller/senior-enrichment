@@ -27,6 +27,7 @@ class CampusDetail extends Component {
 
   render() {
     const campus = this.props.campus
+    console.log('Students:', campus.Students)
     return(
       <div className="single-campus campus">
         {
@@ -35,8 +36,9 @@ class CampusDetail extends Component {
             <h2>{campus.name}</h2>
             <img src={campus.image}></img>
             <ul className="students">
-              {campus.Students.map((student) => {
-                <li key={student.id}>{student.name}</li>
+              {
+                campus.Students && campus.Students.map((student) => {
+                return <li key={student.id}>{student.name}</li>
               })}
             </ul>
             <button  onClick={() => this.onClick()}>addNewStudent</button>
