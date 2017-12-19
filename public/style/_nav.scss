@@ -1,0 +1,16 @@
+.navbar {
+  background: $seconday-color;
+  margin: 0;
+  h1{
+    margin-top:0;
+  }
+  ul{
+    list-style: none;
+  }
+}
+
+.navbar-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
