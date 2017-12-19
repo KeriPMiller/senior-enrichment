@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import history from '../history'
-// import home and students maybe?
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -23,8 +22,3 @@ export default class NavBar extends Component {
     </nav>
   )}
 }
-
-// conatiner
-
-
-// export default connect(mapStateToProps)(NavBar)

@@ -72,10 +72,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampusDetail)
-
-
-// <ul>
-//   {this.props.campus.Students.map((student) => (
-//     <li>{student.name}</li>
-//   ))}
-// </ul>
