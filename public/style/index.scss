@@ -1,9 +1,22 @@
-$primary-color: rgb(23, 173, 139);
-$seconday-color: rgb(198, 232, 126);
+$primary-color: #4d4d4d;
+$seconday-color: #B4FC0D;
+$primary-accent-color: #64D86D;
+$highlight: #14B4CD;
+$secondary-accent-color: #358D91;
 
 body {
   background: $primary-color;
   margin:0;
+  font-family:  'Barlow', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $highlight;
+  font-family:  'Barlow', sans-serif;
+
 }
 
 @import '_nav.scss';
+@import '_campusList';
+@import url('https://fonts.googleapis.com/css?family=Barlow|Bungee');

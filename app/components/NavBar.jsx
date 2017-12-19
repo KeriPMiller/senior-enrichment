@@ -12,10 +12,10 @@ export default class NavBar extends Component {
     <nav className="navbar navbar-default">
       <div className="conatiner">
         <h1>Margaret Hamilton Interplanetary Academy of JavaScript</h1>
-        <div className="navbar-buttons">
+        <div className="navbar-links">
           <ul>
-            <li><Link to='/'><button className="nav button">Home</button></Link></li>
-            <li><Link to='/students'><button className="nav button">Students</button></Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/students'>Students</Link></li>
           </ul>
         </div>
       </div>

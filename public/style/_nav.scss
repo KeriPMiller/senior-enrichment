@@ -3,14 +3,25 @@
   margin: 0;
   h1{
     margin-top:0;
+    padding: 1em;
+    font-family: 'Bungee', cursive;
   }
   ul{
+    padding-top: 0;
     list-style: none;
   }
 }
 
-.navbar-buttons {
+ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
+
+  padding: 2em;
+
+  a {
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5em;
+  }
 }
