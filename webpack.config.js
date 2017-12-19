@@ -1,6 +1,7 @@
-'use strict';
 
-const { resolve } = require('path')
+const {
+  resolve
+} = require('path')
 
 module.exports = {
   entry: './app/main.jsx',
@@ -14,15 +15,22 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders: [
-      {
+    rules: [{
         test: /jsx?$/,
         include: resolve(__dirname, './app'),
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
-  }
+          presets: ['react', 'es2015'],
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
 };

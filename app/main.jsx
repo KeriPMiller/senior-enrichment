@@ -1,10 +1,11 @@
 'use strict'
-import React from 'react'
-import {render} from 'react-dom'
-import { Provider } from 'react-redux'
+import React from 'react';
+import {render} from 'react-dom';
+import { Provider } from 'react-redux';
+import './index.scss';
 
-import store from './store'
-import Routes from './Routes'
+import store from './store';
+import Routes from './Routes';
 
 render (
   <Provider store={store}>
