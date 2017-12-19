@@ -2,9 +2,13 @@
   "name": "senior_enrichment",
   "version": "0.0.1",
   "description": "A review time project",
+  "engines": {
+    "node": ">= 7.0.0",
+    "npm": "5.2.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*.test.js *.test.js",
+    "test": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/senior_enrichment-test' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js ./client/**/*.spec.js --watch --compilers js:babel-register",
     "build": "webpack",
     "build-watch": "webpack -w",
     "start": "nodemon server/start.js",
@@ -14,7 +18,7 @@
   "keywords": [
     "react",
     "redux",
-    "skeleton"
+    "mock-school"
   ],
   "dependencies": {
     "axios": "^0.16.2",
@@ -44,6 +48,7 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "mocha": "^4.0.1",
+    "supertest": "^3.0.0",
     "volleyball": "^1.4.1",
     "webpack": "^3.5.5"
   }
